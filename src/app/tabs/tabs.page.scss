@@ -1,0 +1,21 @@
+ion-tab-bar{
+
+padding-top: 15px;
+    border: none;
+	
+}
+.tabs {
+padding-top: 15px;
+    border: none;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    color: rgb(140, 140, 140);
+    --background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0));
+}
+ .tabs ion-tab-button{
+background-color: #1e202300;
+}
