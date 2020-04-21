@@ -1,0 +1,30 @@
+<ion-header>
+	<ion-toolbar color="primary">
+		<ion-buttons slot="end">
+			<ion-button [routerLink]="['/new-task']">
+				<ion-icon slot="icon-only" name="add"></ion-icon>
+			</ion-button>
+		</ion-buttons>
+		<ion-title>home</ion-title>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content  class="list-mini-content" padding>
+ 
+	<hr no-margin no-padding>
+	<div (swipe)="swipePage($event)">
+
+
+	</div>
+	 <div id="feed-posts" *ngFor="let feedPost of feedPosts" style="overflow-y: hidden">
+        <app-post [inputPostID]="feedPost.id"></app-post>
+      </div>  
+
+	
+		
+
+
+</ion-content>
+
+
+
