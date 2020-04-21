@@ -165,7 +165,7 @@ tapPhotoLike(times) {
   getLikes(pid) {
     this.likeService.getLikes(pid).subscribe(likes => {
       this.likes = likes;
-      this.likeLen = likes.length;
+      this.likeLen = likes.length; 
       this.auth.getAuthState().subscribe(
         user => {
           if (user) {

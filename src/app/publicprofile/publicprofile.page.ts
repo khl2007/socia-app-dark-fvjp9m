@@ -33,7 +33,8 @@ export class PublicprofilePage implements OnInit {
   userFollowing;
   followers: any;
   following: any;
-
+  totalFollowers;
+  totalFollowing;
   userData: User = new User();
 	isFollowing: boolean;
   postfeed: any;
@@ -63,6 +64,13 @@ export class PublicprofilePage implements OnInit {
 				this.ismyprofile = true;
 				
 			  } else {
+          this.followserv.isFollowing(this.userid, this.curentuserid).subscribe(
+              followinguser => {
+                if (followinguser[0]) {
+                  this.isFollowing = true;
+                 
+                }
+            });
 				//this.router.navigate(["/login"]);
 			  }
       
@@ -126,27 +134,31 @@ this.showToolbar = scrollTop >= 225;
 
    // console.log(this.userData);
   }
-
-  follow(profileuid) {
-  if (this.isFollowing) {
+follow(profileuid) {
+    if (this.isFollowing) {
+      this.isFollowing = false;
       this.followserv.unfollow(profileuid);
-      console.log('rebeatede ');
     } else {
+      this.isFollowing = true;
       this.followserv.follow(profileuid);
     }
-    
   }
+  
 
 getFollowData() {
     this.followserv.getFollowers(this.userid).subscribe(
       followers => {
         this.followers = followers;
         this.userFollowers = followers;
+        this.totalFollowers= followers.length;
+        
+        
       });
     this.followserv.getFollowing(this.userid).subscribe(
       following => {
         this.following = following;
         this.userFollowing = following;
+        this.totalFollowing= following.length;
       });
   }
 
@@ -159,7 +171,7 @@ checkFollowing(){
                  
                 }
             });
-*
+*/
 if (this.isFollowing) {
       return 'Unfollow';
     } else {

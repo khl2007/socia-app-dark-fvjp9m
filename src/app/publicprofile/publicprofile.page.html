@@ -31,8 +31,8 @@
         </div>
 <ion-button expand="block" *ngIf="!ismyprofile" color="primary" class="ion-butt-font" [routerLink]="['/chats/chat', userid]">Message </ion-button>
         <ion-button *ngIf="!ismyprofile" (click)="follow(userid)" fill="clear" color="primary"><ion-icon name="add"></ion-icon>{{ checkFollowing() }}</ion-button>
-<ion-button fill="clear" (click)="presentcommtsModal(userid)" color="primary" class="ion-butt-font" >fowlors </ion-button>
-<ion-button fill="clear" (click)="presentcommtsModalf(userid)" color="primary" class="ion-butt-font" >fowlwing </ion-button>
+<ion-button fill="clear" (click)="presentcommtsModal(userid)" color="primary" class="ion-butt-font" >fowlors : {{totalFollowers}}</ion-button>
+<ion-button fill="clear" (click)="presentcommtsModalf(userid)" color="primary" class="ion-butt-font" >fowlwing :{{totalFollowing}} </ion-button>
  
 
       </div>
