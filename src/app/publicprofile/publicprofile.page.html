@@ -18,7 +18,8 @@
       <div class="header">
         <div class="avatar">
          <ion-avatar >
-	<img [src]="useravtar">
+    <img *ngIf="!ismyprofile" [src]="useravtar" (click)="changepic()">
+    <img  [src]="useravtar" >
         </ion-avatar>
               
         </div>
