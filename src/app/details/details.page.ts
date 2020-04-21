@@ -14,7 +14,7 @@ import {
 import { ImagePicker } from "@ionic-native/image-picker/ngx";
 import { WebView } from "@ionic-native/ionic-webview/ngx";
 import { ActivatedRoute, Router } from "@angular/router";
-
+ 
 @Component({
   selector: "app-details",
   templateUrl: "./details.page.html",

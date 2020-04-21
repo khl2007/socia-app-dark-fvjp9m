@@ -538,6 +538,19 @@ getUserInfo(uid) {
     };
     img.src = imageUri;
   }
+updateuseravatar(curentuserid ,image){
+return new Promise<any>((resolve, reject) => {
+     let data = {
+      imgurl: image,
+    };
+      this.afs
+        .collection("users")
+        .doc(curentuserid)
+        .set(data)
+        .then(res => resolve(res), err => reject(err));
+    });
+
+}
 
   uploadImage(imageURI, randomId) {
     return new Promise<any>((resolve, reject) => {
