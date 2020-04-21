@@ -124,12 +124,13 @@ this.showToolbar = scrollTop >= 225;
       this.userData = result;
     });
 
-    console.log(this.userData);
+   // console.log(this.userData);
   }
 
   follow(profileuid) {
   if (this.isFollowing) {
       this.followserv.unfollow(profileuid);
+      console.log('rebeatede ');
     } else {
       this.followserv.follow(profileuid);
     }
@@ -151,14 +152,14 @@ getFollowData() {
 
 checkFollowing(){
 
-this.followserv.isFollowing(this.userid, this.curentuserid).subscribe(
+/*this.followserv.isFollowing(this.userid, this.curentuserid).subscribe(
               followinguser => {
                 if (followinguser[0]) {
                   this.isFollowing = true;
                  
                 }
             });
-
+*
 if (this.isFollowing) {
       return 'Unfollow';
     } else {
@@ -169,7 +170,7 @@ if (this.isFollowing) {
 
   getBlogPosts(userid) {
     this.firebaseService.sellectUserNews(userid).subscribe(res => {
-      console.log(res);
+     // console.log(res);
       this.postfeed = res;
     });
     //console.log(this.blogPost);
@@ -197,7 +198,7 @@ if (this.isFollowing) {
   swipePage(event) {
     if (event.direction === 1) {
       // Swipe Left
-      console.log("Swap Camera");
+     // console.log("Swap Camera");
     }
 
     if (event.direction === 2) {

@@ -1,0 +1,35 @@
+<ion-toolbar>
+  	<ion-buttons slot="start">
+   <ion-button color="secondary" fill="solid" (click)="dismiss()">
+			<ion-icon name="close-outline"></ion-icon>
+			</ion-button>
+  	</ion-buttons>
+	</ion-toolbar>
+<ion-content>	
+ <ion-segment  [(ngModel)]="type" color="primary " mode="md">
+  <ion-segment-button value="seg1">
+    <ion-label >followers</ion-label>
+  </ion-segment-button>
+  <ion-segment-button value="seg2">
+    <ion-label>following</ion-label>
+  </ion-segment-button>
+</ion-segment> 
+<div [ngSwitch]="type">
+
+<div *ngSwitchCase="'seg1'" >
+ <div *ngFor="let user of followers" id="user-panel-container">
+
+    <app-userfolowers [uid]="user.uid" ></app-userfolowers>
+  </div>
+</div>
+
+<div *ngSwitchCase="'seg2'" >
+<div *ngFor="let user of following" id="user-panel-container">
+
+    <app-userfolowers [uid]="user.uid" ></app-userfolowers>
+  </div>
+</div>
+</div>
+
+
+<ion-content>
