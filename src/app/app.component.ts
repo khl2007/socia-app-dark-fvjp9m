@@ -8,7 +8,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { auth } from 'firebase/app';
  
 import { Router } from '@angular/router';
-
+ 
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html'
