@@ -31,7 +31,7 @@ import { ModalController } from '@ionic/angular';
 export class MyprofilePage implements OnInit {
   displayName;
   useravtar;
-
+  userid;
 
   constructor( public loadingCtrl: LoadingController,
     private route: ActivatedRoute,
@@ -45,8 +45,8 @@ export class MyprofilePage implements OnInit {
      public toastCtrl: ToastController,) { }
 
   ngOnInit() { 
-userid = this.firebaseService.getUserId();
-this.getuserdata(userid);
+this.userid = this.firebaseService.getUserId();
+this.getuserdata(this.userid);
   }
 
 getuserdata(userid) {
@@ -64,7 +64,7 @@ updateUserdata(){
 
 let data = {
       displayName : this.displayName;
-      imgurl: this.useravtar,
+      avatar: this.useravtar,
     };
 
 this.firebaseService.updateuserdata(userId,data);
