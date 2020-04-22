@@ -63,11 +63,11 @@ getuserdata(userid) {
 updateUserdata(){
 
 let data = {
-      displayName : this.displayName;
+      displayName : this.displayName,
       avatar: this.useravtar,
     };
 
-this.firebaseService.updateuserdata(userId,data);
+this.firebaseService.updateuserdata(this.userid,data);
 
 }
 
