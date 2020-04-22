@@ -541,6 +541,7 @@ getUserInfo(uid) {
 updateuseravatar(curentuserid ,image){
 return new Promise<any>((resolve, reject) => {
      let data = {
+
       imgurl: image,
     };
       this.afs
