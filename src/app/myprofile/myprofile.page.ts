@@ -30,9 +30,27 @@ import { ModalController } from '@ionic/angular';
 })
 export class MyprofilePage implements OnInit {
 
-  constructor() { }
+  constructor( public loadingCtrl: LoadingController,
+    private route: ActivatedRoute,
+    private router: Router,
+    private followserv: FollowService,
+    private firebaseService: FirebaseService,
+    public afAuth: AngularFireAuth, public moCtrl: ModalController,
+    private routerOutlet: IonRouterOutlet,
+     private imagePicker: ImagePicker,
+     private webview: WebView,
+     public toastCtrl: ToastController,) { }
 
   ngOnInit() {
+  }
+
+getuserdata(userid) {
+    this.firebaseService.getUserInfo(userid).subscribe((result: User) => {
+      this.userData = result;
+      this.useravtar = this.userData.avatar;
+    });
+
+   // console.log(this.userData);
   }
 
 }
