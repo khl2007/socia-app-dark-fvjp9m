@@ -546,7 +546,7 @@ return new Promise<any>((resolve, reject) => {
       this.afs
         .collection("users")
         .doc(curentuserid)
-        .set(data)
+        .update(data)
         .then(res => resolve(res), err => reject(err));
     });
 
