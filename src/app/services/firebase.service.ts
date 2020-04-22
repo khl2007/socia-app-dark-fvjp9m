@@ -538,15 +538,12 @@ getUserInfo(uid) {
     };
     img.src = imageUri;
   }
-updateuseravatar(curentuserid ,image){
+updateuserdata(userid ,data){
 return new Promise<any>((resolve, reject) => {
-     let data = {
-
-      imgurl: image,
-    };
+    
       this.afs
         .collection("users")
-        .doc(curentuserid)
+        .doc(userid)
         .update(data)
         .then(res => resolve(res), err => reject(err));
     });
