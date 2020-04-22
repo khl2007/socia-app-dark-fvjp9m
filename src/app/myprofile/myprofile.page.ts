@@ -29,6 +29,9 @@ import { ModalController } from '@ionic/angular';
   styleUrls: ['./myprofile.page.scss'],
 })
 export class MyprofilePage implements OnInit {
+  displayName;
+  useravtar;
+
 
   constructor( public loadingCtrl: LoadingController,
     private route: ActivatedRoute,
@@ -41,12 +44,16 @@ export class MyprofilePage implements OnInit {
      private webview: WebView,
      public toastCtrl: ToastController,) { }
 
-  ngOnInit() {
+  ngOnInit() { 
+userid = this.firebaseService.getUserId();
+this.getuserdata(userid);
   }
 
 getuserdata(userid) {
     this.firebaseService.getUserInfo(userid).subscribe((result: User) => {
       this.userData = result;
+      this.displayName= this.userData.displayName;
+      // this.instigram = this.userData.instigram;
       this.useravtar = this.userData.avatar;
     });
 
